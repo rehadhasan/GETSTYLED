@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
-import ContactStore from "../../store/ContactStore.jsx";
+import ContactStore from "../../store/ContactStore.js";
 import {toast} from "react-toastify";
 
 const Contact = () => {
@@ -24,7 +24,7 @@ const Contact = () => {
     };
 
     return (
-        <div className="bg-bg-white-50 py-12 px-6 lg:px-20">
+        <div className="bg-bg-white py-12 px-6 lg:px-20">
             <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -87,7 +87,7 @@ const Contact = () => {
                                     {...register("name", { required: "Name is required" })}
                                     type="text"
                                     placeholder="Enter your name"
-                                    className="w-full border border-black border-opacity-30 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue"
+                                    className="w-full bg-white text-black border focus:border-black rounded-md px-4 py-2 outline-none focus:outline-none"
                                 />
                                 {errors.name && (<span className="text-red-500 text-sm">{errors.name.message}</span>
                                 )}
@@ -108,7 +108,7 @@ const Contact = () => {
                                     })}
                                     type="email"
                                     placeholder="Enter your email"
-                                    className="w-full border border-black border-opacity-30 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue"
+                                    className="w-full bg-white text-black border focus:border-black rounded-md px-4 py-2 outline-none focus:outline-none"
                                 />
                                 {errors.email && (<span className="text-red-500 text-sm">{errors.email.message}</span>
                                 )}
@@ -122,7 +122,7 @@ const Contact = () => {
                                     {...register("subject", { required: "Subject is required" })}
                                     type="text"
                                     placeholder="Enter the subject"
-                                    className="w-full border border-black border-opacity-30 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-400"
+                                    className="w-full bg-white text-black border focus:border-black rounded-md px-4 py-2 outline-none focus:outline-none"
                                 />
                                 {errors.subject && (<span className="text-red-500 text-sm">{errors.subject.message}</span>
                                 )}
@@ -136,7 +136,7 @@ const Contact = () => {
                                     {...register("message", { required: "Message is required" })}
                                     placeholder="Enter your message"
                                     rows="4"
-                                    className="w-full border border-black border-opacity-30 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-400"
+                                    className="w-full bg-white text-black border focus:border-black rounded-md px-4 py-2 outline-none focus:outline-none"
                                 ></textarea>
                                 {errors.message && (<span className="text-red-500 text-sm">{errors.message.message}</span>
                                 )}

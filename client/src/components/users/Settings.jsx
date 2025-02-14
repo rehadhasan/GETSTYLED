@@ -40,15 +40,16 @@ const Settings = () => {
 
     // Submit handler
     const onSubmit = async (data) => {
-        // Log the profile data in JSON format (locked to state values)
-        const postBody = { ...data, photo: base64Photo };
-        let res = await UpdateUserRequest(postBody)
-        if(res){
-            toast.success("Saved Changes Successfully");
-            await ReadUserRequest()
-        }else{
-            toast.error("Something went wrong")
-        }
+        toast.error("Sorry, we cannot save this information for security reasons.")
+
+        // const postBody = { ...data, photo: base64Photo };
+        // let res = await UpdateUserRequest(postBody)
+        // if(res){
+        //     toast.success("Saved Changes Successfully");
+        //     await ReadUserRequest()
+        // }else{
+        //     toast.error("Something went wrong")
+        // }
     };
 
     // Handle photo change (convert to Base64)
@@ -73,7 +74,7 @@ const Settings = () => {
     return (
         <div className="container mx-auto p-6">
             <div className="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-lg">
-                <h2 className="text-2xl font-semibold text-gray-800">Settings</h2>
+                <h2 className="text-2xl font-semibold text-black text-opacity-90">Settings</h2>
                 <form onSubmit={handleSubmit(onSubmit)} className="mt-8 space-y-6">
                     {/* Profile Photo */}
                     <div className="flex md:flex-row flex-col items-center justify-center gap-5">
@@ -87,7 +88,7 @@ const Settings = () => {
                         <input
                             type="file"
                             accept="image/*"
-                            className="p-2 border border-gray-300 rounded-md"
+                            className="p-2 border focus:border-black bg-white text-black rounded-md outline-none focus:outline-none"
                             onChange={handlePhotoChange}
                         />
                     </div>
@@ -99,7 +100,7 @@ const Settings = () => {
                             type="text"
                             id="name"
                             placeholder="Enter your full name"
-                            className="mt-2 p-3 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                            className="mt-2 p-3 w-full border focus:border-black bg-white text-black rounded-md outline-none focus:outline-none"
                             {...register("name", { required: "Name is required" })}
                         />
                         {errors.name && <p className="text-sm text-red-500 mt-1">{errors.name.message}</p>}
@@ -115,7 +116,7 @@ const Settings = () => {
                             readOnly
                             disabled
                             placeholder="Enter your email"
-                            className="mt-2 p-3 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                            className="mt-2 p-3 w-full border focus:border-black bg-white text-black rounded-md outline-none focus:outline-none"
                         />
                     </div>
 
@@ -126,7 +127,7 @@ const Settings = () => {
                             type="tel"
                             id="phone"
                             placeholder="Enter your phone number"
-                            className="mt-2 p-3 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                            className="mt-2 p-3 w-full border focus:border-black bg-white text-black rounded-md outline-none focus:outline-none"
                             {...register("phone", { required: "Phone number is required" })}
                         />
                         {errors.phone && <p className="text-sm text-red-500 mt-1">{errors.phone.message}</p>}
@@ -139,13 +140,13 @@ const Settings = () => {
                             type={showPassword ? "text" : "password"}  // Toggle the input type based on the state
                             id="password"
                             placeholder="Enter your password"
-                            className="mt-2 p-3 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                            className="mt-2 p-3 w-full border focus:border-black bg-white text-black rounded-md outline-none focus:outline-none"
                             {...register("password", { required: "Password is required" })}
                         />
                         <button
                             type="button"
                             onClick={togglePasswordVisibility}
-                            className="absolute right-3 top-1/2 transform translate-y-1/4 text-gray-600"
+                            className="absolute right-3 top-1/2 transform translate-y-1/4 text-black text-opacity-60"
                         >
                             {showPassword ? <FiEyeOff size={20}/> : <FiEye size={20}/>} {/* Toggle icon */}
                         </button>

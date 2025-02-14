@@ -92,7 +92,7 @@ const AppFooter = () => {
 
                 {/* Copyright Section */}
                 <div className="border-t border-gray-700 mt-10 pt-4 text-center text-sm">
-                    <p>© 2024 All rights reserved by Rehad Business.</p>
+                    <p>© 2024 All rights reserved by Rehad Hasan.</p>
                 </div>
             </div>
         </footer>

@@ -1,13 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
+import galleryImg from "../../assets/img/gallery-img-1.jpg"
 
 const images = [
-    "https://i.ibb.co/n6Hdw1P/istockphoto-1384450465-612x612.jpg",
-    "https://i.ibb.co/n6Hdw1P/istockphoto-1384450465-612x612.jpg",
-    "https://i.ibb.co/n6Hdw1P/istockphoto-1384450465-612x612.jpg",
-    "https://i.ibb.co/n6Hdw1P/istockphoto-1384450465-612x612.jpg",
-    "https://i.ibb.co/n6Hdw1P/istockphoto-1384450465-612x612.jpg",
-    "https://i.ibb.co/n6Hdw1P/istockphoto-1384450465-612x612.jpg",
+    galleryImg,
+    galleryImg,
+    galleryImg,
+    galleryImg,
+    galleryImg,
+    galleryImg,
 ];
 
 const Gallery = () => {

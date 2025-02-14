@@ -93,14 +93,16 @@ const Details = () => {
                     {/* Main Image */}
                     <div className="md:col-span-2 col-span-1 flex flex-col items-center">
                         {/* Main Image */}
-                        <motion.img
-                            src={activeImage}
-                            alt={ProductDetails.name}
-                            className="rounded-lg w-[400px]" // Fixed width
-                            initial={{opacity: 0}}
-                            animate={{opacity: 1}}
-                            transition={{duration: 1}}
-                        />
+                        <div className='w-full h-[400px] rounded-lg overflow-hidden'>
+                            <motion.img
+                                src={activeImage}
+                                alt={ProductDetails.name}
+                                className="w-full h-full object-cover" // Fixed width
+                                initial={{opacity: 0}}
+                                animate={{opacity: 1}}
+                                transition={{duration: 1}}
+                            />
+                        </div>
                         {/* Image Thumbnails */}
                         <div className="mt-4 flex space-x-2 justify-center">
                             {['img1', 'img2', 'img3', 'img4'].map((key, index) => (

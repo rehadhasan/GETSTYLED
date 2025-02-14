@@ -56,7 +56,7 @@ const Sidebar = ({ isMobile, isOpen, toggleSidebar }) => {
                                     className="flex items-center gap-3 p-3 hover:bg-gray-100 w-full text-left cursor-pointer"
                                 >
                                     {item.icon}
-                                    <span>{item.label}</span>
+                                    <span className='text-black text-opacity-90'>{item.label}</span>
                                 </button>
                             ) : (
                                 <Link
@@ -64,7 +64,7 @@ const Sidebar = ({ isMobile, isOpen, toggleSidebar }) => {
                                     className="flex items-center gap-3 p-3 hover:bg-gray-100 cursor-pointer"
                                 >
                                     {item.icon}
-                                    <span>{item.label}</span>
+                                    <span className='text-black text-opacity-90'>{item.label}</span>
                                 </Link>
                             )}
                         </li>

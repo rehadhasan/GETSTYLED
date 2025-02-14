@@ -101,7 +101,7 @@ const Profile = () => {
                                         type="text"
                                         name="cus_name"
                                         placeholder="Name"
-                                        className="p-2 border border-gray-300 rounded-md"
+                                        className="p-2 border focus:border-black text-black bg-white rounded-md outline-none focus:outline-none"
                                         value={formData.cus_name}
                                         onChange={handleChange}
                                     />
@@ -109,7 +109,7 @@ const Profile = () => {
                                         type="text"
                                         name="cus_phone"
                                         placeholder="Phone"
-                                        className="p-2 border border-gray-300 rounded-md"
+                                        className="p-2 border focus:border-black text-black bg-white rounded-md outline-none focus:outline-none"
                                         value={formData.cus_phone}
                                         onChange={handleChange}
                                     />
@@ -117,7 +117,7 @@ const Profile = () => {
                                         type="email"
                                         name="cus_email"
                                         placeholder="Email"
-                                        className="p-2 border border-gray-300 rounded-md"
+                                        className="p-2 border focus:border-black text-black bg-white rounded-md outline-none focus:outline-none"
                                         value={formData.cus_email}
                                         onChange={handleChange}
                                     />
@@ -125,7 +125,7 @@ const Profile = () => {
                                         type="text"
                                         name="cus_add"
                                         placeholder="Address"
-                                        className="p-2 border border-gray-300 rounded-md"
+                                        className="p-2 border focus:border-black text-black bg-white rounded-md outline-none focus:outline-none"
                                         value={formData.cus_add}
                                         onChange={handleChange}
                                     />
@@ -133,7 +133,7 @@ const Profile = () => {
                                         type="text"
                                         name="cus_city"
                                         placeholder="City"
-                                        className="p-2 border border-gray-300 rounded-md"
+                                        className="p-2 border focus:border-black text-black bg-white rounded-md outline-none focus:outline-none"
                                         value={formData.cus_city}
                                         onChange={handleChange}
                                     />
@@ -141,7 +141,7 @@ const Profile = () => {
                                         type="text"
                                         name="cus_state"
                                         placeholder="State"
-                                        className="p-2 border border-gray-300 rounded-md"
+                                        className="p-2 border focus:border-black text-black bg-white rounded-md outline-none focus:outline-none"
                                         value={formData.cus_state}
                                         onChange={handleChange}
                                     />
@@ -149,7 +149,7 @@ const Profile = () => {
                                         type="text"
                                         name="cus_postcode"
                                         placeholder="Postcode"
-                                        className="p-2 border border-gray-300 rounded-md"
+                                        className="p-2 border focus:border-black text-black bg-white rounded-md outline-none focus:outline-none"
                                         value={formData.cus_postcode}
                                         onChange={handleChange}
                                     />
@@ -157,7 +157,7 @@ const Profile = () => {
                                         type="text"
                                         name="cus_country"
                                         placeholder="Country"
-                                        className="p-2 border border-gray-300 rounded-md"
+                                        className="p-2 border focus:border-black text-black bg-white rounded-md outline-none focus:outline-none"
                                         value={formData.cus_country}
                                         onChange={handleChange}
                                     />
@@ -169,7 +169,7 @@ const Profile = () => {
                                         type="text"
                                         name="ship_name"
                                         placeholder="Shipping Name"
-                                        className="p-2 border border-gray-300 rounded-md"
+                                        className="p-2 border focus:border-black text-black bg-white rounded-md outline-none focus:outline-none"
                                         value={formData.ship_name}
                                         onChange={handleChange}
                                     />
@@ -177,7 +177,7 @@ const Profile = () => {
                                         type="text"
                                         name="ship_phone"
                                         placeholder="Shipping Phone"
-                                        className="p-2 border border-gray-300 rounded-md"
+                                        className="p-2 border focus:border-black text-black bg-white rounded-md outline-none focus:outline-none"
                                         value={formData.ship_phone}
                                         onChange={handleChange}
                                     />
@@ -185,7 +185,7 @@ const Profile = () => {
                                         type="text"
                                         name="ship_add"
                                         placeholder="Shipping Address"
-                                        className="p-2 border border-gray-300 rounded-md"
+                                        className="p-2 border focus:border-black text-black bg-white rounded-md outline-none focus:outline-none"
                                         value={formData.ship_add}
                                         onChange={handleChange}
                                     />
@@ -193,7 +193,7 @@ const Profile = () => {
                                         type="text"
                                         name="ship_city"
                                         placeholder="Shipping City"
-                                        className="p-2 border border-gray-300 rounded-md"
+                                        className="p-2 border focus:border-black text-black bg-white rounded-md outline-none focus:outline-none"
                                         value={formData.ship_city}
                                         onChange={handleChange}
                                     />
@@ -201,7 +201,7 @@ const Profile = () => {
                                         type="text"
                                         name="ship_state"
                                         placeholder="Shipping State"
-                                        className="p-2 border border-gray-300 rounded-md"
+                                        className="p-2 border focus:border-black text-black bg-white rounded-md outline-none focus:outline-none"
                                         value={formData.ship_state}
                                         onChange={handleChange}
                                     />
@@ -209,7 +209,7 @@ const Profile = () => {
                                         type="text"
                                         name="ship_postcode"
                                         placeholder="Shipping Postcode"
-                                        className="p-2 border border-gray-300 rounded-md"
+                                        className="p-2 border focus:border-black text-black bg-white rounded-md outline-none focus:outline-none"
                                         value={formData.ship_postcode}
                                         onChange={handleChange}
                                     />
@@ -217,7 +217,7 @@ const Profile = () => {
                                         type="text"
                                         name="ship_country"
                                         placeholder="Shipping Country"
-                                        className="p-2 border border-gray-300 rounded-md"
+                                        className="p-2 border focus:border-black text-black bg-white rounded-md outline-none focus:outline-none"
                                         value={formData.ship_country}
                                         onChange={handleChange}
                                     />

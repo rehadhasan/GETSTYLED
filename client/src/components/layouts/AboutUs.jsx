@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import aboutImg from "../../assets/img/about_us.jpg"
 
 const AboutUs = () => {
     return (
@@ -13,11 +14,7 @@ const AboutUs = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
                 >
-                    <img
-                        src="https://i.ibb.co.com/JFs7Ytm/istockphoto-1281476617-612x612.jpg"
-                        alt="About Us"
-                        className="rounded-lg shadow-lg w-full"
-                    />
+                    <img src={aboutImg} alt="About Us" className="rounded-lg shadow-lg w-full"/>
                 </motion.div>
 
                 {/* Right Section: Content */}

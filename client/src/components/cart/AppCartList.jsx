@@ -1,15 +1,25 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {FaArrowLeft, FaHeart, FaShoppingCart} from "react-icons/fa";
+import {
+    FaArrowLeft,
+    FaCcAmazonPay,
+    FaCcMastercard,
+    FaCcPaypal,
+    FaCcVisa,
+    FaHeart,
+    FaShoppingCart
+} from "react-icons/fa";
 import CartStore from "../../store/CartStore.js";
 import { toast } from "react-toastify";
 import {useNavigate} from "react-router-dom";
 import InvoiceStore from "../../store/InvoiceStore.js";
+import UserStore from "../../store/UserStore.js";
 
 const AppCartList = () => {
     const navigate = useNavigate();
     const { CartList, RemoveCartRequest, CartListRequest, TotalPrice, shippingCharge, PayableAmount } = CartStore();
     const {invoiceIsSubmit, CreateInvoiceRequest} = InvoiceStore()
+    const {ProfileDetails} = UserStore()
 
     const handleRemove = async (cartID) => {
         let res = await RemoveCartRequest(cartID);
@@ -22,7 +32,12 @@ const AppCartList = () => {
     };
 
     const handleCheckout = async () => {
-        await CreateInvoiceRequest()
+        if(ProfileDetails === null){
+            toast.error("Complete Your Profile, Continue..")
+            window.location.href = "/profile"
+        }else{
+            await CreateInvoiceRequest()
+        }
     }
 
     return (
@@ -162,7 +177,8 @@ const AppCartList = () => {
                         </div>
 
                         {/* Summary Section */}
-                        <div className="bg-white rounded-lg shadow-lg p-4 w-full lg:w-1/3 h-full text-center lg:text-left">
+                        <div
+                            className="bg-white rounded-lg shadow-lg p-4 w-full lg:w-1/3 h-full text-center lg:text-left">
                             <div className="py-4">
                                 <h2 className="text-black text-opacity-60 text-lg font-bold">Total Summary</h2>
                                 <div className="text-black text-opacity-90 flex justify-between mt-3">
@@ -178,13 +194,12 @@ const AppCartList = () => {
                                     <p>${PayableAmount.toFixed(2)}</p>
                                 </div>
                             </div>
-
-                            <div className="mt-4 flex items-center justify-center border-t">
-                                <img
-                                    src="https://i.ibb.co.com/tqjb6Mx/payment.png"
-                                    alt="Payment methods"
-                                    className="w-40 mb-2 lg:mb-0"
-                                />
+                            <hr/>
+                            <div className="flex items-center justify-center mt-4 space-x-4">
+                                <FaCcVisa className="text-4xl text-blue transition duration-300 ease-in-out"/>
+                                <FaCcMastercard className="text-4xl text-red-500 transition duration-300 ease-in-out"/>
+                                <FaCcPaypal className="text-4xl text-blue transition duration-300 ease-in-out"/>
+                                <FaCcAmazonPay className="text-4xl text-yellow-600 transition duration-300 ease-in-out"/>
                             </div>
                         </div>
                     </div>

@@ -9,28 +9,28 @@ const Orders = () => {
             {/* Recent Orders */}
             <section className="bg-white p-4 rounded shadow">
                 <div className="flex justify-between items-center mb-4">
-                    <h2 className="text-xl font-bold">Orders</h2>
+                    <h2 className="text-black text-opacity-90 text-xl font-bold">Orders</h2>
                 </div>
                 {InvoiceList.length > 0 ? (
                     <div className="space-y-4">
                         {InvoiceList.map((order) => (
                             <div
                                 key={order.id}
-                                className="flex justify-between items-center bg-gray-50 md:p-4 px-4 py-8 rounded shadow relative"
+                                className="flex justify-between items-center text-black text-opacity-50 md:p-4 px-4 py-8 rounded shadow relative"
                             >
                                 <div className="space-y-1 sm:w-3/4">
-                                    <p className="text-sm font-medium text-gray-600">
+                                    <p className="text-sm font-medium text-black text-opacity-60">
                                         Order ID: <span className="font-bold">{order.tran_id}</span>
                                     </p>
-                                    <p className="text-sm font-medium text-gray-600">
+                                    <p className="text-sm font-medium text-black text-opacity-60">
                                         Payment: <span className="font-bold">{order.payment_status}</span>
                                     </p>
-                                    <p className="text-sm font-medium text-gray-600">
+                                    <p className="text-sm font-medium text-black text-opacity-60">
                                         Delivery: <span className="font-bold">{order.delivery_status}</span>
                                     </p>
-                                    <p className="text-sm text-gray-500">Date: {order.createdAt.slice(0,10)}</p>
+                                    <p className="text-sm text-black text-opacity-50">Date: {order.createdAt.slice(0,10)}</p>
                                 </div>
-                                <p className="text-lg font-bold text-gray-800">{Number(order.payable).toFixed(2)}</p>
+                                <p className="text-lg font-bold text-black text-opacity-80">{Number(order.payable).toFixed(2)}</p>
 
                                 {/* View Button */}
                                 <button

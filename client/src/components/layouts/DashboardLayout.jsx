@@ -33,7 +33,7 @@ const DashboardLayout = (props) => {
                     >
                         ☰
                     </button>
-                    <h1 className="text-lg font-bold">Dashboard</h1>
+                    <h1 className="text-black text-opacity-90 text-lg font-bold">Dashboard</h1>
                 </header>
                 <main className="">{props.children}</main>
             </div>

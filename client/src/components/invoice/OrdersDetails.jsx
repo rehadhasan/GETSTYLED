@@ -60,20 +60,20 @@ const OrderDetails = () => {
             {/* Order Info */}
             <div className="mt-6 bg-white shadow rounded-lg p-4 lg:p-6">
                 <div className="flex justify-between items-center">
-                    <h2 className="md:text-xl text-lg font-semibold">Order #{InvoiceDetails.invoice.tran_id}</h2>
-                    <button onClick={()=>window.print()} className="btn btn-outline md:btn-md btn-sm flex items-center">
+                    <h2 className="text-black text-opacity-90 md:text-xl text-lg font-semibold">Order #{InvoiceDetails.invoice.tran_id}</h2>
+                    <button onClick={()=>window.print()} className="btn btn-outline text-black border-black hover:bg-black hover:text-white md:btn-md btn-sm flex items-center">
                         <BsPrinter className="mr-2"/> Print
                     </button>
                 </div>
                 <div className="mt-4 grid grid-cols-1 lg:grid-cols-3 gap-4 text-sm">
                     <div>
-                        <p>
+                        <p className='text-black text-opacity-90'>
                             <strong>Paid on:</strong> {InvoiceDetails.invoice.createdAt.slice(0,10)}
                         </p>
-                        <p>
+                        <p className='text-black text-opacity-90'>
                             <strong>Placed on:</strong> {InvoiceDetails.invoice.createdAt.slice(0,10)}
                         </p>
-                        <p>
+                        <p className='text-black text-opacity-90'>
                             <strong>Updated:</strong> {InvoiceDetails.invoice.updatedAt.slice(0,10)}
                         </p>
                     </div>
@@ -83,7 +83,7 @@ const OrderDetails = () => {
             {/* Details Section */}
             <div className="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-4">
                 {/* Customer Info */}
-                <div className="bg-white shadow rounded-lg p-4">
+                <div className="text-black text-opacity-90 bg-white shadow rounded-lg p-4">
                     <h3 className="font-medium mb-4">Customer & Order</h3>
                     <p><strong>Name:</strong> {InvoiceDetails.user.name}</p>
                     <p><strong>Email:</strong> {InvoiceDetails.user.email}</p>
@@ -93,7 +93,7 @@ const OrderDetails = () => {
                 </div>
 
                 {/* Shipping Address */}
-                <div className="bg-white shadow rounded-lg p-4">
+                <div className="text-black text-opacity-90 bg-white shadow rounded-lg p-4">
                     <h3 className="font-medium mb-4">Shipping Address</h3>
                     {
                         InvoiceDetails.invoice.ship_details.split(', ').map((item)=> {
@@ -103,7 +103,7 @@ const OrderDetails = () => {
                 </div>
 
                 {/* Billing Address */}
-                <div className="bg-white shadow rounded-lg p-4">
+                <div className="text-black text-opacity-90 bg-white shadow rounded-lg p-4">
                     <h3 className="font-medium mb-4">Billing Address</h3>
                     {
                         InvoiceDetails.invoice.cus_details.split(', ').map((item)=> {
@@ -115,11 +115,11 @@ const OrderDetails = () => {
 
             {/* Items Ordered */}
             <div className="mt-6 bg-white shadow rounded-lg p-4">
-                <h3 className="font-medium mb-4">Items Ordered</h3>
+                <h3 className="text-black text-opacity-90 font-medium mb-4">Items Ordered</h3>
                 <div className='overflow-x-auto whitespace-nowrap'>
                     <table className="w-full text-sm">
                         <thead className="bg-gray-100">
-                        <tr>
+                        <tr className='text-black text-opacity-90'>
                             <th className="text-left p-2">Image</th>
                             <th className="text-left p-2">Item Name</th>
                             <th className="text-left p-2">Size</th>
@@ -134,7 +134,7 @@ const OrderDetails = () => {
                         {
                             InvoiceDetails.products.map((item,index)=>{
                                 return (
-                                    <tr key={index}>
+                                    <tr className='text-black text-opacity-90' key={index}>
                                         <td className="p-2">
                                             <img
                                                 src={item.product.image}
@@ -150,7 +150,7 @@ const OrderDetails = () => {
                                         <td className="p-2 text-right">${Number(item.product.discount ? item.product.discountPrice * item.qty : item.product.price * item.qty).toFixed(2)}</td>
                                         <td className="p-2 text-center">
                                             <button
-                                                className="btn btn-sm bg-primary hover:bg-secondary text-white"
+                                                className="btn btn-sm border border-primary hover:border-secondary bg-primary hover:bg-secondary text-white"
                                                 onClick={() => handleOpenModal(item.productID)}
                                             >
                                                 Create Review
@@ -171,20 +171,20 @@ const OrderDetails = () => {
                 </h2>
                 <div className="space-y-2">
                     <div className="flex justify-between items-center text-base">
-                        <span className="text-gray-600">Total</span>
-                        <span className="font-medium text-gray-900">${Number(InvoiceDetails.invoice.total).toFixed(2)}</span>
+                        <span className="text-black text-opacity-60">Total</span>
+                        <span className="font-medium text-black text-opacity-90">${Number(InvoiceDetails.invoice.total).toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between items-center text-base">
-                        <span className="text-gray-600">VAT</span>
-                        <span className="font-medium text-gray-900">${Number(InvoiceDetails.invoice.vat).toFixed(2)}</span>
+                        <span className="text-black text-opacity-60">VAT</span>
+                        <span className="font-medium text-black text-opacity-90">${Number(InvoiceDetails.invoice.vat).toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between items-center text-base">
-                        <span className="text-gray-600">Delivery Charge</span>
-                        <span className="font-medium text-gray-900">${Number(InvoiceDetails.invoice.shipping).toFixed(2)}</span>
+                        <span className="text-black text-opacity-60">Delivery Charge</span>
+                        <span className="font-medium text-black text-opacity-90">${Number(InvoiceDetails.invoice.shipping).toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between items-center border-t pt-2 mt-2">
-                        <span className="text-lg font-semibold text-gray-700">Payable</span>
-                        <span className="text-lg font-semibold text-green-600">${Number(InvoiceDetails.invoice.payable).toFixed(2)}</span>
+                        <span className="text-lg font-semibold text-black text-opacity-70">Payable</span>
+                        <span className="text-lg font-semibold text-green">${Number(InvoiceDetails.invoice.payable).toFixed(2)}</span>
                     </div>
                 </div>
             </section>
@@ -193,10 +193,10 @@ const OrderDetails = () => {
             {showModal && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
                     <div className="bg-white rounded-lg p-6 shadow-lg w-96">
-                        <h2 className="text-lg font-medium mb-4">Create Review</h2>
+                        <h2 className="text-black text-opacity-90 text-lg font-medium mb-4">Create Review</h2>
                         {/* Star Rating System */}
                         <div className="mb-4">
-                            <label className="block text-sm font-medium mb-2">Rating</label>
+                            <label className="text-black text-opacity-90 block text-sm font-medium mb-2">Rating</label>
                             <div className="flex space-x-2">
                                 {[1, 2, 3, 4, 5].map((star) => (
                                     <button
@@ -233,12 +233,12 @@ const OrderDetails = () => {
                         </div>
                         {/* Comment Section */}
                         <div className="mb-4">
-                            <label className="block text-sm font-medium mb-1">Comment</label>
+                            <label className="text-black text-opacity-90 block text-sm font-medium mb-1">Comment</label>
                             <textarea
                                 name="comment"
                                 value={review.comment}
                                 onChange={handleReviewChange}
-                                className="w-full border rounded p-2"
+                                className="w-full border focus:border-black bg-white text-black outline-none hover:outline-none rounded p-2"
                                 rows="3"
                             />
                             {!review.comment && (
@@ -250,13 +250,13 @@ const OrderDetails = () => {
                         {/* Action Buttons */}
                         <div className="flex justify-end space-x-2">
                             <button
-                                className="btn btn-sm btn-outline"
+                                className="btn btn-sm border border-black text-black hover:bg-black hover:text-white btn-outline"
                                 onClick={() => setShowModal(false)}
                             >
                                 Cancel
                             </button>
                             <button
-                                className="btn btn-sm bg-primary hover:bg-secondary text-white"
+                                className="btn btn-sm border border-primary hover:border-secondary bg-primary hover:bg-secondary text-white"
                                 onClick={() => {
                                     if (review.rating && review.comment) {
                                         handleReviewSubmit();

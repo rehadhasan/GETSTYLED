@@ -1,6 +1,7 @@
 {
   "name": "client",
   "private": true,
+  "homepage": "https://ecommerce.rehadhasan.com",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

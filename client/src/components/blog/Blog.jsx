@@ -2,36 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import BlogStore from "../../store/BlogStore.js";
 
-const blogPosts = [
-    {
-        id: 1,
-        title: "Top 10 Products for Your Home",
-        description:
-            "Discover our top 10 products that will make your home stylish and functional.",
-        image: "https://i.ibb.co.com/PrfYX2V/BOS4-Man-At-Computer-Pixabay-800x530.jpg",
-        date: "December 20, 2024",
-        link: "/blog/details",
-    },
-    {
-        id: 2,
-        title: "How to Choose the Right Accessories",
-        description:
-            "Learn how to select accessories that complement your personal style.",
-        image: "https://i.ibb.co.com/PrfYX2V/BOS4-Man-At-Computer-Pixabay-800x530.jpg",
-        date: "December 18, 2024",
-        link: "/blog/details",
-    },
-    {
-        id: 3,
-        title: "5 Tips to Save Money While Shopping",
-        description:
-            "Shop smart with these 5 tips and get the most value for your money.",
-        image: "https://i.ibb.co.com/PrfYX2V/BOS4-Man-At-Computer-Pixabay-800x530.jpg",
-        date: "December 15, 2024",
-        link: "/blog/details",
-    },
-];
-
 const Blog = () => {
     const {BlogList} = BlogStore()
     return (

@@ -12,15 +12,16 @@ const cors = require('cors')
 const cookieParser = require('cookie-parser')
 const mongoose = require('mongoose')
 const path = require('path')
+require('dotenv').config()
 
-
-let URL = "mongodb+srv://rehad:624602@cluster0.f764rqj.mongodb.net/Single-Ecommerce-Store"
+let URL = process.env.MONGO_URI;
 mongoose.connect(URL).then(()=>{
     console.log("Database Connect")
 }).catch((err)=>{
     console.log(err)
 })
 
+app.use(bodyParser())
 app.use(cookieParser());
 app.use(cors())
 app.use(helmet())
@@ -29,6 +30,9 @@ app.use(hpp())
 
 app.use(express.json({limit: "50mb"}));
 app.use(express.urlencoded({limit: "50mb"}));
+
+let Limiter = rateLimit({windowMs:15*60*1000, max:30000})
+app.use(Limiter)
 
 app.use('/api/v1',router)
 

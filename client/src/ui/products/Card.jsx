@@ -8,14 +8,14 @@ const Card = ({product}) => {
             whileHover={{scale: 1.05}}
             className="p-4 border rounded-lg bg-white shadow-lg"
         >
-            <div className='w-full h-60 overflow-hidden mb-4 rounded'>
+            <div className='w-full h-[188px] overflow-hidden mb-4 rounded'>
                 <img
                     src={product.image}
                     alt={product.name}
                     className="w-full h-full object-cover"
                 />
             </div>
-            <h3 className="text-black text-lg font-semibold truncate">{product.name}</h3>
+            <h3 className="text-black text-base font-normal truncate">{product.name}</h3>
             {product.discount ? (
                 <div className="flex items-center gap-3">
                     <p className="text-red-500 text-lg font-bold">${product.discountPrice}</p>

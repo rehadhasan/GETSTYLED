@@ -36,7 +36,7 @@ const ResetPasswordForm = () => {
                                 type={isPasswordVisible ? 'text' : 'password'}
                                 {...register('password', {
                                     required: 'Password is required',
-                                    minLength: {value: 6, message: 'Password must be at least 6 characters long'}
+                                    minLength: {value: 5, message: 'Password must be at least 5 characters long'}
                                 })}
                                 className={`mt-2 p-3 w-full bg-white text-black border focus:outline-none focus:border-black ${errors.password ? 'border-red-500' : 'border-black border-opacity-5'} rounded-md`}
                                 placeholder="Enter your password"

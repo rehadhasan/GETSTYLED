@@ -54,7 +54,6 @@ const LoginForm = () => {
                             id="email"
                             type="email"
                             placeholder='example@gmail.com'
-                            defaultValue='engr.rehad@gmail.com'
                             {...register("email")}
                             className="mt-1 block w-full px-3 py-2 bg-white text-black border border-black border-opacity-10 rounded-md shadow-sm focus:border-black focus:outline-none"
                         />
@@ -67,7 +66,6 @@ const LoginForm = () => {
                         <input
                             id="password"
                             type={passwordVisible ? "text" : "password"}
-                            defaultValue='admin'
                             {...register("password")}
                             className="mt-1 block w-full px-3 py-2 bg-white text-black border border-black border-opacity-10 rounded-md shadow-sm focus:outline-none focus:border-black pr-10"
                         />

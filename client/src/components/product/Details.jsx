@@ -126,7 +126,7 @@ const Details = () => {
                         <div className='flex flex-col space-y-4'>
                             <p className='text-black text-opacity-60 text-base font-medium'>Brand: <span
                                 className='text-secondary font-normal'>{ProductDetails['brand'].brandName}</span></p>
-                            <h2 className="text-3xl font-normal text-black">{ProductDetails.name}</h2>
+                            <h2 className="lg:text-3xl md:text-2xl text-lg font-normal text-black">{ProductDetails.name}</h2>
                             <p className='text-black text-base font-normal'>{parse(ProductDetails['details'].description.split(' ').slice(0, 30).join(' ')+ '..')}</p>
                         </div>
                         <div className='flex items-center justify-between gap-5 lg:pr-14 md:pr-8 pr-0'>
@@ -231,14 +231,14 @@ const Details = () => {
                                 !isCartSubmit?(
                                     <motion.button
                                         onClick={handleCartList}
-                                        className="flex items-center justify-center px-4 py-2 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-primary transition-colors"
+                                        className="flex items-center justify-center lg:text-base text-sm px-4 py-2 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-primary transition-colors"
                                     >
                                         <BsCartPlus className="mr-2"/>
                                         Add to Cart
                                     </motion.button>
                                 ): (
                                     <motion.button
-                                        className="flex items-center justify-center gap-2 px-4 py-2 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-primary transition-colors"
+                                        className="flex items-center justify-center lg:text-base text-sm gap-2 px-4 py-2 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-primary transition-colors"
                                     >
                                         <span>Loading</span>
                                         <span className="loading loading-spinner loading-sm"></span>
@@ -249,13 +249,13 @@ const Details = () => {
                                 !isWishSubmit?(
                                     <motion.button
                                         onClick={handleWishList}
-                                        className="flex items-center justify-center px-4 py-2 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-primary transition-colors"
+                                        className="flex items-center justify-center lg:text-base text-sm px-4 py-2 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-primary transition-colors"
                                     >
                                         Add To Wish
                                     </motion.button>
                                 ): (
                                     <motion.button
-                                        className="flex items-center justify-center gap-2 px-4 py-2 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-primary transition-colors"
+                                        className="flex items-center justify-center lg:text-base text-sm gap-2 px-4 py-2 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-primary transition-colors"
                                     >
                                         <span>Loading</span>
                                         <span className="loading loading-spinner loading-sm"></span>

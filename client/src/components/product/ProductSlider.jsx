@@ -45,7 +45,7 @@ const ProductSlider = () => {
                                                 {slide.title}
                                             </motion.h2>
                                             <motion.p
-                                                className="lg:text-5xl md:text-4xl text-2xl font-bold mt-2"
+                                                className="lg:text-5xl md:text-4xl text-2xl font-bold md:mt-2"
                                                 initial={{ opacity: 0, x: -100 }}
                                                 animate={{ opacity: 1, x: 0 }}
                                                 transition={{ duration: 0.8 }}
@@ -54,7 +54,7 @@ const ProductSlider = () => {
                                             </motion.p>
                                             {slide.description && (
                                                 <motion.p
-                                                    className="mt-4 mb-8"
+                                                    className="md:mt-4 md:mb-8 mb-4"
                                                     initial={{ opacity: 0, x: -100 }}
                                                     animate={{ opacity: 1, x: 0 }}
                                                     transition={{ duration: 1 }}
@@ -63,7 +63,7 @@ const ProductSlider = () => {
                                                 </motion.p>
                                             )}
                                             <motion.a
-                                                className="bg-bg-primary hover:bg-bg-secondary text-white lg:px-6 lg:py-3 px-4 py-2 rounded transition-transform transform hover:scale-105"
+                                                className="bg-bg-primary hover:bg-bg-secondary text-white lg:px-6 lg:py-3 px-3 py-2 rounded transition-transform transform hover:scale-105"
                                                 initial={{ opacity: 0, scale: 0.8 }}
                                                 animate={{ opacity: 1, scale: 1 }}
                                                 transition={{ duration: 1.2 }}
@@ -85,7 +85,7 @@ const ProductSlider = () => {
                         AdsList.slice(0,2).map((adds,index)=>{
                             return (
                                 <Link className="mb-4" to={`/details/${adds.productID}`} key={index}>
-                                    <div className='w-full lg:h-48 md:h-96 h-64 rounded overflow-hidden object-cover'>
+                                    <div className='w-full lg:h-48 md:h-80 h-40 rounded overflow-hidden object-cover'>
                                         <img
                                             src={adds.thumbnail}
                                             alt={adds.title}
@@ -106,7 +106,7 @@ const ProductSlider = () => {
 const CustomPrevArrow = ({onClick}) => {
     return (
         <button
-            className="absolute right-20 top-1/2 transform -translate-y-1/2 bg-bg-white text-black p-3 rounded-lg shadow-lg hover:bg-bg-white transition-colors z-10"
+            className="absolute right-20 top-1/2 transform -translate-y-1/2 bg-bg-white text-black md:p-3 p-2 rounded-lg shadow-lg hover:bg-bg-white transition-colors z-10"
             onClick={onClick}
         >
             <IoIosArrowBack />
@@ -118,7 +118,7 @@ const CustomPrevArrow = ({onClick}) => {
 const CustomNextArrow = ({ onClick }) => {
     return (
         <button
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-bg-white text-black p-3 rounded-lg shadow-lg hover:bg-bg-white transition-colors z-10"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-bg-white text-black md:p-3 p-2 rounded-lg shadow-lg hover:bg-bg-white transition-colors z-10"
             onClick={onClick}
         >
             <IoIosArrowForward />

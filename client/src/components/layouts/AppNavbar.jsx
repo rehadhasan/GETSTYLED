@@ -12,6 +12,15 @@ import {toast, ToastContainer} from "react-toastify";
 import CartStore from "../../store/CartStore.js";
 import WishStore from "../../store/WishStore.js";
 
+const navMenu = [
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+    { name: "Gallery", path: "/gallery" },
+    { name: "Blogs", path: "/blog" },
+    { name: "Career", path: "/career" },
+    { name: "Contact", path: "/contact" },
+];
+
 const AppNavbar = () => {
     const {isLogin,LogoutUserRequest} = UserStore()
     const {CartCount, CartListRequest} = CartStore();
@@ -60,14 +69,14 @@ const AppNavbar = () => {
     }, []);
 
     return (
-        <div className="border-b-2 sticky top-0 z-50 bg-bg-white">
+        <div className="border-b-2 z-50 bg-bg-white">
             {/* Top bar */}
             <div className="bg-bg-primary">
                 <div className="container mx-auto flex justify-between items-center text-white px-4 py-3 text-xs sm:text-sm">
                     <div className="flex md:flex-row flex-col md:gap-3 gap-1 text-sm">
-                        <a href="#">Contact: engr.rehad@gmail.com</a>
+                        <a href="#">Contact: support@getstyled.com</a>
                         <span className='md:block hidden'>|</span>
-                        <a href='#'>Hotline: +8801321774599</a>
+                        <a href='#'>Hotline: +1 234 567 890</a>
                     </div>
                     <div>
                         <select className="bg-transparent outline-none text-white text-sm">
@@ -82,8 +91,8 @@ const AppNavbar = () => {
             <div className="bg-bg-white">
                 <div className="container mx-auto flex flex-row items-center justify-between px-4 py-4">
                     {/* Logo */}
-                    <div className="flex flex-row items-center">
-                        <h1 className='text-primary text-lg font-semibold whitespace-nowrap'>E-Commerce</h1>
+                    <div className="">
+                        <img className="md:w-[200px] w-[100px]" src='./GETSTYLED-300X100.png' alt='' />
                     </div>
 
                     {/* Search Bar */}
@@ -164,7 +173,7 @@ const AppNavbar = () => {
 
             {/* Navigation Links and Categories Menu */}
             <div className="bg-bg-white border-t border-gray-200">
-                <div className="container mx-auto px-4 py-2 flex items-center justify-between">
+                <div className="container mx-auto px-4 py-4 flex items-center justify-between">
                     <div
                         className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 items-center text-gray-700">
                         <Select
@@ -173,25 +182,17 @@ const AppNavbar = () => {
                             placeholder="Categories"
                             onChange={handleCategoryChange}
                         />
-                        <div className="hidden sm:flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
-                            <a href="/" className="hover:text-primary font-medium active:text-primary">
-                                Home
-                            </a>
-                            <a href="/about" className="hover:text-primary font-medium active:text-primary">
-                                About us
-                            </a>
-                            <a href="/gallery" className="hover:text-primary font-medium active:text-primary">
-                                Gallery
-                            </a>
-                            <a href="/blog" className="hover:text-primary font-medium active:text-primary">
-                                Blogs
-                            </a>
-                            <a href="/career" className="hover:text-primary font-medium active:text-primary">
-                                Career
-                            </a>
-                            <a href="/contact" className="hover:text-primary font-medium active:text-primary">
-                                Contact
-                            </a>
+                        <div className="hidden md:flex flex-col md:flex-row space-y-2 sm:space-y-0 lg:space-x-6 md:space-x-4">
+                            {navMenu.map((item, i) => (
+                                <Link
+                                    key={i}
+                                    to={item.path}
+                                    className={`text-black text-opacity-60 font-medium hover:text-primary hover:text-opacity-80 transition ease-in-out duration-300 
+                                    ${location.pathname === item.path ? "text-primary text-opacity-80" : ""}`}
+                                >
+                                    {item.name}
+                                </Link>
+                            ))}
                         </div>
                     </div>
 
@@ -209,28 +210,19 @@ const AppNavbar = () => {
             {/* Fullscreen Menu Overlay for Mobile */}
             <div className={`fixed inset-0 bg-bg-white z-50 transform ${menuOpen ? "translate-x-0" : "translate-x-full"} transition-transform duration-300 ease-out flex flex-col p-4 space-y-4`}>
                 <div className="flex justify-between items-center">
-                    <h1 className="text-primary text-2xl font-semibold">Menu</h1>
+                    <div className="">
+                        <img className="md:w-[200px] w-[100px]" src='./GETSTYLED-300X100-N.png' alt='' />
+                    </div>
                     <FaTimes className="text-primary text-2xl cursor-pointer" onClick={() => setMenuOpen(false)} />
                 </div>
                 <nav className="flex flex-col items-start gap-5 text-lg text-gray-700">
-                    <a href="/" className="hover:text-primary font-semibold mt-5 border-b border-rose-100 w-full">
-                        Home
-                    </a>
-                    <a href="/about" className="hover:text-primary font-semibold border-b border-rose-100 w-full">
-                        About us
-                    </a>
-                    <a href="/gallery" className="hover:text-primary font-semibold border-b border-rose-100 w-full">
-                        Gallery
-                    </a>
-                    <a href="/blog" className="hover:text-primary font-semibold border-b border-rose-100 w-full">
-                        Blogs
-                    </a>
-                    <a href="/career" className="hover:text-primary font-semibold border-b border-rose-100 w-full">
-                        Career
-                    </a>
-                    <a href="/contact" className="hover:text-primary font-semibold border-b border-rose-100 w-full">
-                        Contact
-                    </a>
+                    {
+                        navMenu.map((item, i) => (
+                            <Link key={i} to={item.path} className={`text-black text-opacity-60 hover:text-primary hover:text-opacity-80 font-semibold mt-2 border-b border-rose-100 w-full transition ease-in-out duration-300 ${location.pathname === item.path?"text-primary text-opacity-80":""}`}>
+                                {item.name}
+                            </Link>
+                        ))
+                    }
                 </nav>
                 {
                     isLogin()?(
@@ -247,7 +239,7 @@ const AppNavbar = () => {
                     ): (
                         <div className="flex flex-col gap-5">
                             <Link to='/signup'
-                                  className="btn border border-primary hover:border-primary bg-transparent hover:bg-transparent text-lg font-semibold text-rose-700 mt-5">Sign
+                                  className="btn border border-primary hover:border-primary bg-transparent hover:bg-transparent text-lg font-semibold text-primary hover:text-primary mt-5">Sign
                                 up</Link>
                             <Link to='/login'
                                   className="btn bg-bg-primary hover:bg-secondary text-lg font-semibold text-white">Login</Link>

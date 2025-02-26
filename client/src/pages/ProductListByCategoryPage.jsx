@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import Layout from "../components/layouts/Layout.jsx";
 import ProductStore from "../store/ProductStore.js";
 import {useParams} from "react-router-dom";
-import ProductList from "../components/product/ProductList.jsx";
+import AppProductList from "../components/product/AppProductList.jsx";
 import Loader from "../components/layouts/Loader.jsx";
 
 const ProductListByCategoryPage = () => {
@@ -24,7 +24,7 @@ const ProductListByCategoryPage = () => {
     }else{
         return (
             <Layout>
-                <ProductList/>
+                <AppProductList/>
             </Layout>
         );
     }

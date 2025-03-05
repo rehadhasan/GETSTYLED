@@ -15,7 +15,7 @@ const NewProduct = () => {
                 </Fade>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 py-4">
-                    {ForYouProduct.slice(0,8).map((product, index) => (
+                    {ForYouProduct.slice(0,16).map((product, index) => (
                         <Fade key={index} direction="up" duration={800} triggerOnce>
                             <Card product={product}/>
                         </Fade>

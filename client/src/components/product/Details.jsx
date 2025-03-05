@@ -271,7 +271,7 @@ const Details = () => {
                         <div className='grid grid-cols-1 gap-4 mt-4'>
                             {/*Product Adds Item*/}
                             {
-                                PopularProductList.map((product, index) => {
+                                PopularProductList.slice(0,5).map((product, index) => {
                                     return (
 
                                         <motion.div

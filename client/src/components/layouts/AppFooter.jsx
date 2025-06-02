@@ -32,7 +32,7 @@ const AppFooter = () => {
                             </div>
                             <div className="flex items-center space-x-2">
                                 <FaEnvelope className="text-lg" />
-                                <span>support@getstyled.com</span>
+                                <span>contact@getstyled.com</span>
                             </div>
                         </div>
                         <div className="flex mt-4 space-x-4">
@@ -105,6 +105,7 @@ const AppFooter = () => {
                 {/* Copyright Section */}
                 <div className="border-t border-gray-700 mt-10 pt-4 text-center text-sm">
                     <p>© 2024 All rights reserved by GETSTYLED.</p>
+                    <p>Developed by Rehad Hasan Shawn</p>
                 </div>
             </div>
         </footer>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 import { RxCross2 } from "react-icons/rx";
+import {toast} from "react-toastify";
 
 const FilterModal = ({ setFilterOpen, applyFilters, CategoryList, BrandList }) => {
 
@@ -15,6 +16,17 @@ const FilterModal = ({ setFilterOpen, applyFilters, CategoryList, BrandList }) =
     const handleMaxChange = (e) => {
         setPriceMax(e.target.value);
     };
+
+    const handleFilter = () => {
+        if (rating === null) {
+            toast.error("Rating is required!")
+        }else if (priceMax === 0){
+            toast.error("Price range is required!")
+        }else{
+            applyFilters(searchKeyword, selectedBrand, selectedCategory, rating, priceMin, priceMax);
+            setFilterOpen(false);
+        }
+    }
 
     return (
         <div className="fixed inset-0 flex justify-end z-50">
@@ -155,10 +167,7 @@ const FilterModal = ({ setFilterOpen, applyFilters, CategoryList, BrandList }) =
                         Clear
                     </button>
                     <button
-                        onClick={() => {
-                            applyFilters(searchKeyword, selectedBrand, selectedCategory,rating,priceMin, priceMax);
-                            setFilterOpen(false);
-                        }}
+                        onClick={handleFilter}
                         className="bg-secondary hover:bg-secondary text-white px-4 py-2 rounded-lg"
                     >
                         Apply

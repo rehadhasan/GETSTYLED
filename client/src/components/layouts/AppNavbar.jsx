@@ -74,7 +74,7 @@ const AppNavbar = () => {
             <div className="bg-bg-primary">
                 <div className="container mx-auto flex justify-between items-center text-white px-4 py-3 text-xs sm:text-sm">
                     <div className="flex md:flex-row flex-col md:gap-3 gap-1 text-sm">
-                        <a href="#">Contact: support@getstyled.com</a>
+                        <a href="#">Contact: contact@getstyled.com</a>
                         <span className='md:block hidden'>|</span>
                         <a href='#'>Hotline: +1 234 567 890</a>
                     </div>
@@ -91,9 +91,9 @@ const AppNavbar = () => {
             <div className="bg-bg-white">
                 <div className="container mx-auto flex flex-row items-center justify-between px-4 py-4">
                     {/* Logo */}
-                    <div className="">
+                    <Link to={'/'} className="">
                         <img className="md:w-[200px] w-[100px]" src='./GETSTYLED-300X100.png' alt='' />
-                    </div>
+                    </Link>
 
                     {/* Search Bar */}
                     <div className="w-full flex-grow hidden sm:mx-8 md:flex items-center">
@@ -210,9 +210,9 @@ const AppNavbar = () => {
             {/* Fullscreen Menu Overlay for Mobile */}
             <div className={`fixed inset-0 bg-bg-white z-50 transform ${menuOpen ? "translate-x-0" : "translate-x-full"} transition-transform duration-300 ease-out flex flex-col p-4 space-y-4`}>
                 <div className="flex justify-between items-center">
-                    <div className="">
+                    <Link to={'/'} className="">
                         <img className="md:w-[200px] w-[100px]" src='./GETSTYLED-300X100-N.png' alt='' />
-                    </div>
+                    </Link>
                     <FaTimes className="text-primary text-2xl cursor-pointer" onClick={() => setMenuOpen(false)} />
                 </div>
                 <nav className="flex flex-col items-start gap-5 text-lg text-gray-700">

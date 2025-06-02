@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
 import { motion } from 'framer-motion';
-import {AiOutlineHeart} from 'react-icons/ai';
 import { BsCartPlus } from 'react-icons/bs';
-import {FaInfoCircle, FaStar} from 'react-icons/fa';
-import { CiShare2 } from "react-icons/ci";
+import {FaHeart, FaInfoCircle, FaStar} from 'react-icons/fa';
+import {CiHeart, CiShare2} from "react-icons/ci";
 import ProductStore from "../../store/ProductStore.js";
 import parse from 'html-react-parser';
 import ReviewStore from "../../store/ReviewStore.js";
@@ -233,7 +232,7 @@ const Details = () => {
                                         onClick={handleCartList}
                                         className="flex items-center justify-center lg:text-base text-sm px-4 py-2 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-primary transition-colors"
                                     >
-                                        <BsCartPlus className="mr-2"/>
+                                        <BsCartPlus className="text-lg mr-2"/>
                                         Add to Cart
                                     </motion.button>
                                 ): (
@@ -251,6 +250,7 @@ const Details = () => {
                                         onClick={handleWishList}
                                         className="flex items-center justify-center lg:text-base text-sm px-4 py-2 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-primary transition-colors"
                                     >
+                                        <CiHeart className="text-2xl mr-2"/>
                                         Add To Wish
                                     </motion.button>
                                 ): (

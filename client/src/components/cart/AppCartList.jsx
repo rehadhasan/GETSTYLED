@@ -6,7 +6,6 @@ import {
     FaCcMastercard,
     FaCcPaypal,
     FaCcVisa,
-    FaHeart,
     FaShoppingCart
 } from "react-icons/fa";
 import CartStore from "../../store/CartStore.js";
@@ -139,9 +138,6 @@ const AppCartList = () => {
                                             )}
                                             <td className="p-2">
                                                 <div className="flex gap-2 items-center justify-center">
-                                                    <button className="p-3 border border-black border-opacity-10 rounded">
-                                                        <FaHeart className="text-black text-opacity-30" />
-                                                    </button>
                                                     <button
                                                         onClick={() => handleRemove(item._id)}
                                                         className="px-3 py-2 border border-black border-opacity-10 rounded"

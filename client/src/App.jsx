@@ -28,21 +28,17 @@ import TermsConditionsPage from "./pages/TermsConditionsPage.jsx";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage.jsx";
 import CategoryPage from "./pages/CategoryPage.jsx";
 import BrandPage from "./pages/BrandPage.jsx";
-import ProductsPage from "./pages/ProductsPage.jsx";
-import PopularProductsPage from "./pages/PopularProductsPage.jsx";
 
 const App = () => {
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<HomePage/>} />
-                <Route path="/new-products" element={<ProductsPage/>} />
-                <Route path="/popular-products" element={<PopularProductsPage/>} />
                 <Route path="/details/:productID" element={<DetailsPage/>} />
-                <Route path="/by-category/:categoryID" element={<ProductListByCategoryPage/>} />
                 <Route path="/categories" element={<CategoryPage/>} />
-                <Route path="/by-brand/:brandID" element={<ProductListByBrandPage/>} />
                 <Route path="/brands" element={<BrandPage/>} />
+                <Route path="/by-category/:categoryID" element={<ProductListByCategoryPage/>} />
+                <Route path="/by-brand/:brandID" element={<ProductListByBrandPage/>} />
                 <Route path="/by-keyword/:keyword" element={<ProductListByKeywordPage/>} />
                 <Route path="/signup" element={<SignupPage/>} />
                 <Route path="/login" element={<LoginPage/>} />

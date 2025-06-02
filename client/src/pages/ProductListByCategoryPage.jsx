@@ -2,11 +2,11 @@ import React, {useEffect} from 'react';
 import Layout from "../components/layouts/Layout.jsx";
 import ProductStore from "../store/ProductStore.js";
 import {useParams} from "react-router-dom";
-import AppProductList from "../components/product/AppProductList.jsx";
 import Loader from "../components/layouts/Loader.jsx";
+import ProductList from "../components/product/ProductList.jsx";
 
 const ProductListByCategoryPage = () => {
-    const {CategoryListRequest, CategoryList,BrandListRequest,BrandList, ProductListByCategoryRequest, AllProductList} = ProductStore()
+    const {CategoryListRequest, CategoryList,BrandListRequest,BrandList, ProductListByCategoryRequest, ListProducts} = ProductStore()
     const {categoryID} = useParams()
 
     useEffect(() => {
@@ -17,14 +17,14 @@ const ProductListByCategoryPage = () => {
         })()
     }, [categoryID]);
 
-    if(CategoryList === null || AllProductList === null || BrandList === null){
+    if(CategoryList === null || ListProducts === null || BrandList === null){
         return (
             <Loader/>
         )
     }else{
         return (
             <Layout>
-                <AppProductList/>
+                <ProductList/>
             </Layout>
         );
     }

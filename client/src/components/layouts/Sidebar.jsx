@@ -36,9 +36,9 @@ const Sidebar = ({ isMobile, isOpen, toggleSidebar }) => {
             className={`${isMobile ? `fixed top-0 left-0 z-50 h-full ${isOpen ? "translate-x-0" : "-translate-x-full"}` : "relative h-screen"} bg-white shadow-lg transition-transform w-64`}
         >
             <div className="p-4 flex items-center justify-between">
-                <div className="">
+                <Link to={'/'} className="">
                     <img className="md:w-[150px] w-[100px]" src='./GETSTYLED-300X100.png' alt='' />
-                </div>
+                </Link>
                 {isMobile && (
                     <button
                         onClick={toggleSidebar}

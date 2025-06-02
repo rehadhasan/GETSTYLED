@@ -6,10 +6,11 @@ import 'slick-carousel/slick/slick-theme.css';
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
 import ProductStore from "../../store/ProductStore.js";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const ProductSlider = () => {
     const {ProductSliderList, AdsList} = ProductStore()
+    const navigate = useNavigate();
 
     const settings = {
         dots: true,
@@ -64,10 +65,10 @@ const ProductSlider = () => {
                                             )}
                                             <motion.a
                                                 className="bg-bg-primary hover:bg-bg-secondary text-white lg:px-6 lg:py-3 px-3 py-2 rounded transition-transform transform hover:scale-105"
+                                                href={`/details/${slide.productID}`}
                                                 initial={{ opacity: 0, scale: 0.8 }}
                                                 animate={{ opacity: 1, scale: 1 }}
                                                 transition={{ duration: 1.2 }}
-                                                href={`/details/${slide.productID}`}
                                             >
                                                 {slide.buttonText}
                                             </motion.a>
@@ -84,7 +85,7 @@ const ProductSlider = () => {
                     {
                         AdsList.slice(0,2).map((adds,index)=>{
                             return (
-                                <Link className="mb-4" to={`/details/${adds.productID}`} key={index}>
+                                <a href={`/details/${adds.productID}`} className="mb-4" key={index}>
                                     <div className='w-full lg:h-48 md:h-80 h-40 rounded overflow-hidden object-cover'>
                                         <img
                                             src={adds.thumbnail}
@@ -92,7 +93,7 @@ const ProductSlider = () => {
                                             className="w-full h-full"
                                         />
                                     </div>
-                                </Link>
+                                </a>
                             )
                         })
                     }

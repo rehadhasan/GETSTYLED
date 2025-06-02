@@ -8,7 +8,7 @@ import ReviewStore from "../store/ReviewStore.js";
 import Loader from "../components/layouts/Loader.jsx";
 
 const DetailsPage = () => {
-    const {CategoryListRequest, CategoryList, ProductDetailsRequest, ProductDetails, SimilarProductListRequest, SimilarProductList, PopularProductListRequest, PopularProductList} = ProductStore();
+    const {CategoryListRequest, CategoryList, ProductDetailsRequest, ProductDetails, PopularProductListRequest, PopularProductList} = ProductStore();
     const {ReviewListRequest, ReviewList} = ReviewStore()
 
     const { productID } = useParams();
@@ -17,18 +17,14 @@ const DetailsPage = () => {
         (async () => {
             await CategoryListRequest();
             await ProductDetailsRequest(productID);
-            if (ProductDetails && ProductDetails.categoryID) {
-                await SimilarProductListRequest(ProductDetails.categoryID);
-            }
             await PopularProductListRequest();
             await ReviewListRequest(productID)
         })();
-    }, [productID, ProductDetails?.categoryID]);
+    }, [productID]);
 
     if (
         CategoryList === null ||
         ProductDetails === null ||
-        SimilarProductList === null ||
         PopularProductList === null ||
         ReviewList === null
     ) {

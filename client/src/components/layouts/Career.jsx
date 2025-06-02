@@ -41,14 +41,9 @@ const Career = () => {
     return (
         <section className="bg-bg-white py-10 px-5 md:px-20" id="career">
             <div className="max-w-7xl mx-auto text-center mb-10">
-                <motion.h2
-                    className="text-3xl md:text-4xl font-bold text-black text-opacity-80 mb-4"
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                >
+                <h2 className="text-3xl md:text-4xl font-bold text-black text-opacity-80 mb-4">
                     Careers
-                </motion.h2>
+                </h2>
                 <p className="text-black text-opacity-60">
                     We are always looking for talented and passionate individuals to join our team. Check out our open positions below and apply today!
                 </p>
@@ -58,19 +53,15 @@ const Career = () => {
                 {careerOpportunities.map((job, index) => (
                     <motion.div
                         key={index}
-                        className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: index * 0.2 }}
+                        className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={{ duration: 0.8, ease: 'easeOut' }}
                     >
-                        <motion.h3
-                            className="text-2xl font-semibold text-black text-opacity-80 mb-2"
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5 }}
-                        >
+                        <h3 className="text-2xl font-semibold text-black text-opacity-80 mb-2">
                             {job.title}
-                        </motion.h3>
+                        </h3>
                         <p className="text-black text-opacity-50 mb-4">{job.location}</p>
                         <p className="text-black text-opacity-70 mb-4">{job.description}</p>
                         <h4 className="text-lg font-semibold text-black text-opacity-80 mb-2">Requirements</h4>
@@ -80,10 +71,10 @@ const Career = () => {
                             ))}
                         </ul>
                         <motion.button
-                            className="mt-4 bg-primary text-white px-6 py-2 rounded-lg hover:bg-secondary transition"
+                            className="mt-4 bg-primary text-white px-6 py-2 rounded-lg hover:bg-secondary transition-colors duration-300"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            onClick={()=>window.location.href = '/contact'}
+                            onClick={() => window.location.href = '/contact'}
                         >
                             Apply Now
                         </motion.button>

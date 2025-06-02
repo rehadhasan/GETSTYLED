@@ -9,8 +9,8 @@ const AboutUs = () => {
                 {/* Left Section: Image */}
                 <motion.div
                     className="w-full md:w-1/2"
-                    initial={{ opacity: 0, x: -100 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 100 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
                 >
@@ -20,8 +20,8 @@ const AboutUs = () => {
                 {/* Right Section: Content */}
                 <motion.div
                     className="w-full md:w-1/2 text-center md:text-left"
-                    initial={{ opacity: 0, x: 100 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 100 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
                 >

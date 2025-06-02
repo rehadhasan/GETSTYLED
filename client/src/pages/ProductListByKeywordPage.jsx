@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react';
 import Layout from "../components/layouts/Layout.jsx";
-import AppProductList from "../components/product/AppProductList.jsx";
 import ProductStore from "../store/ProductStore.js";
 import {useParams} from "react-router-dom";
 import Loader from "../components/layouts/Loader.jsx";
+import ProductList from "../components/product/ProductList.jsx";
 
 const ProductListByKeywordPage = () => {
-    const {CategoryListRequest, CategoryList,BrandListRequest,BrandList,ProductListBySearchRequest, AllProductList} = ProductStore()
+    const {CategoryListRequest, CategoryList,BrandListRequest,BrandList,ProductListBySearchRequest, ListProducts} = ProductStore()
     const {keyword} = useParams()
 
     useEffect(() => {
@@ -17,14 +17,14 @@ const ProductListByKeywordPage = () => {
         })()
     }, [keyword]);
 
-    if(CategoryList === null || AllProductList === null || BrandList === null){
+    if(CategoryList === null || ListProducts === null || BrandList === null){
         return (
             <Loader/>
         )
     }else{
         return (
             <Layout>
-                <AppProductList/>
+                <ProductList/>
             </Layout>
         );
     }

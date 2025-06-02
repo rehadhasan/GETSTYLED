@@ -77,33 +77,54 @@ const ProductStore = create((set) => ({
         }
     },
 
-    AllProductList: null,
+    ListProducts: null,
+    isLoading: false,
     ProductListByBrandRequest: async (brandID)=>{
-        let res = await axios.get(`${URL}/ProductListByBrand/${brandID}`)
-        if(res.data['status'] === 'success'){
-            set({AllProductList: res.data['data']});
+        try{
+            set({isLoading: true});
+            let res = await axios.get(`${URL}/ProductListByBrand/${brandID}`)
+            if(res.data['status'] === 'success'){
+                set({ListProducts: res.data['data']});
+            }
+        }finally {
+            set({isLoading: false});
         }
     },
 
     ProductListByCategoryRequest: async (categoryID)=>{
-        let res = await axios.get(`${URL}/ProductListByCategory/${categoryID}`)
-        if(res.data['status'] === 'success'){
-            set({AllProductList: res.data['data']});
+        try{
+            set({isLoading: true});
+            let res = await axios.get(`${URL}/ProductListByCategory/${categoryID}`)
+            if(res.data['status'] === 'success'){
+                set({ListProducts: res.data['data']});
+            }
+        }finally {
+            set({isLoading: false});
         }
     },
 
     ProductListBySearchRequest: async (keyword)=>{
-        let res = await axios.get(`${URL}/ProductListByKeyword/${keyword}`)
-        if(res.data['status'] === 'success'){
-            set({AllProductList: res.data['data']});
+        try{
+            set({isLoading: true});
+            let res = await axios.get(`${URL}/ProductListByKeyword/${keyword}`)
+            if(res.data['status'] === 'success'){
+                set({ListProducts: res.data['data']});
+            }
+        }finally {
+            set({isLoading: false});
         }
     },
 
     ProductListByFilterRequest: async (postBody)=>{
-        let res = await axios.post(`${URL}/ProductListByFilter`, postBody)
-        if(res.data['status'] === 'success'){
-            set({AllProductList: res.data['data']});
-            return true
+        try{
+            set({isLoading: true});
+            let res = await axios.post(`${URL}/ProductListByFilter`, postBody)
+            if(res.data['status'] === 'success'){
+                set({ListProducts: res.data['data']});
+                return true
+            }
+        }finally {
+            set({isLoading: false});
         }
     },
 }));

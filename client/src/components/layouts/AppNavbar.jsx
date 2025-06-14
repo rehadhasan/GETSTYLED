@@ -74,9 +74,9 @@ const AppNavbar = () => {
             <div className="bg-bg-primary">
                 <div className="container mx-auto flex justify-between items-center text-white px-4 py-3 text-xs sm:text-sm">
                     <div className="flex md:flex-row flex-col md:gap-3 gap-1 text-sm">
-                        <a href="#">Contact: contact@getstyled.com</a>
+                        <a href="#">Contact: contact@rehadhasan.com</a>
                         <span className='md:block hidden'>|</span>
-                        <a href='#'>Hotline: +1 234 567 890</a>
+                        <a href='#'>Hotline: +880 1321 774599</a>
                     </div>
                     <div>
                         <select className="bg-transparent outline-none text-white text-sm">

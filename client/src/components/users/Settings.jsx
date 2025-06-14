@@ -41,13 +41,14 @@ const Settings = () => {
     // Submit handler
     const onSubmit = async (data) => {
         const postBody = { ...data, photo: base64Photo };
-        let res = await UpdateUserRequest(postBody)
-        if(res){
-            toast.success("Saved Changes Successfully");
-            await ReadUserRequest()
-        }else{
-            toast.error("Something went wrong")
-        }
+        toast.error("Sorry, profile updates are not allowed for demo accounts.");
+        // let res = await UpdateUserRequest(postBody)
+        // if(res){
+        //     toast.success("Saved Changes Successfully");
+        //     await ReadUserRequest()
+        // }else{
+        //     toast.error("Something went wrong")
+        // }
     };
 
     // Handle photo change (convert to Base64)

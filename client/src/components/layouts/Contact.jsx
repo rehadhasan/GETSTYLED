@@ -49,7 +49,7 @@ const Contact = () => {
                             <FiMail className="text-blue text-2xl" />
                             <div>
                                 <p className="text-lg font-semibold text-black text-opacity-70">Email Us</p>
-                                <p className="text-black text-opacity-60">engr.rehad@gmail.com</p>
+                                <p className="text-black text-opacity-60">contact@rehadhasan.com</p>
                             </div>
                         </motion.div>
 

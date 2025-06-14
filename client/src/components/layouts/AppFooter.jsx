@@ -28,11 +28,11 @@ const AppFooter = () => {
                         <div className="mt-4 space-y-3">
                             <div className="flex items-center space-x-2">
                                 <FaPhoneAlt className="text-lg" />
-                                <span>+1 234 567 890</span>
+                                <span>+880 1321 774599</span>
                             </div>
                             <div className="flex items-center space-x-2">
                                 <FaEnvelope className="text-lg" />
-                                <span>contact@getstyled.com</span>
+                                <span>contact@rehadhasan.com</span>
                             </div>
                         </div>
                         <div className="flex mt-4 space-x-4">

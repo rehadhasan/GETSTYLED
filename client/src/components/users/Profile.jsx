@@ -72,17 +72,17 @@ const Profile = () => {
         }
     };
 
-    // Check if form is complete: all fields should not be empty
+    // Check if form is complete all fields should not be empty
     const isFormComplete = Object.values(formData).every(value => value !== "");
 
     return (
         <div className="container mx-auto px-4 py-6">
             <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
-                {/* If no customer data, show "Add Profile" button */}
+                {/* If no customer data, show Add Profile button" */}
                 {ProfileDetails === null && !isFormVisible ? (
                     <div>
                         <h2 className="text-xl font-semibold text-gray-800">No Profile</h2>
-                        <p className="text-gray-500 mt-4">You don't have a profile yet.</p>
+                        <p className="text-gray-500 mt-4">You don&#39;t have a profile yet.</p>
                         <button
                             className="mt-6 bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary"
                             onClick={handleAddProfile}
@@ -97,6 +97,7 @@ const Profile = () => {
                             <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {/* Billing Information */}
                                 <div className="flex flex-col space-y-4">
+                                    <h3 className="text-black text-lg font-medium">Billing Information</h3>
                                     <input
                                         type="text"
                                         name="cus_name"
@@ -115,9 +116,10 @@ const Profile = () => {
                                     />
                                     <input
                                         type="email"
+                                        disabled={true}
                                         name="cus_email"
                                         placeholder="Email"
-                                        className="p-2 border focus:border-black text-black bg-white rounded-md outline-none focus:outline-none"
+                                        className="p-2 border focus:border-black text-black bg-white rounded-md outline-none focus:outline-none cursor-not-allowed"
                                         value={formData.cus_email}
                                         onChange={handleChange}
                                     />
@@ -165,6 +167,7 @@ const Profile = () => {
 
                                 {/* Shipping Information */}
                                 <div className="flex flex-col space-y-4">
+                                    <h3 className="text-black text-lg font-medium">Shipping Information</h3>
                                     <input
                                         type="text"
                                         name="ship_name"

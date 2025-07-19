@@ -41,18 +41,12 @@ const ProductList = () => {
 
     return (
         <div className="bg-white relative" id="list-products">
-            {/* Overlay when loading */}
-            {isLoading && (
-                <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 z-10">
-                    <p className="text-white text-3xl">Loading...</p>
-                </div>
-            )}
-
             <div className="container mx-auto px-4 py-10">
                 {/* Show a message if no products */}
                 {totalProducts === 0 ? (
-                    <div className="text-center text-lg text-black text-opacity-50">
-                        <p>No Products Available</p>
+                    <div className="flex items-center space-x-2 text-black text-opacity-70 text-sm mb-4">
+                        <FaSearch />
+                        <p className="text-base text-medium">0 items found</p>
                     </div>
                 ) : (
                     <div className="flex items-center space-x-2 text-black text-opacity-70 text-sm mb-4">
@@ -68,37 +62,53 @@ const ProductList = () => {
                     Filter
                 </button>
 
-                {/* Display products */}
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 py-4">
-                    {ListProducts.slice(0, visibleProducts).map((product, index) => (
-                        <Fade key={index} direction="up" duration={800} triggerOnce>
-                            <Card product={product} />
-                        </Fade>
-                    ))}
-                </div>
+                {
+                    isLoading?(
+                        <div className="flex items-center justify-center py-10">
+                            <p className="text-lg text-black text-opacity-50">Loading...</p>
+                        </div>
+                    ):(
+                        totalProducts === 0?(
+                            <div className="flex items-center justify-center py-10">
+                                <p className="text-lg text-black text-opacity-50">No Products Found</p>
+                            </div>
+                        ):(
+                            <div>
+                                {/*Product Listing*/}
+                                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 py-4">
+                                    {ListProducts.slice(0, visibleProducts).map((product, index) => (
+                                        <Fade key={index} direction="up" duration={800} triggerOnce>
+                                            <Card product={product} />
+                                        </Fade>
+                                    ))}
+                                </div>
 
-                {/* Load More / Show Less buttons */}
-                <div className="flex items-center justify-center mt-8 space-x-4">
-                    {visibleProducts < totalProducts && (
-                        <Fade direction="up" duration={800} triggerOnce>
-                            <button
-                                onClick={handleLoadMore}
-                                className="text-primary hover:bg-primary hover:text-white px-3 py-2 border border-primary rounded transition ease-in-out duration-300">
-                                Browse More
-                            </button>
-                        </Fade>
-                    )}
+                                {/* Load More / Show Less buttons */}
+                                <div className="flex items-center justify-center mt-8 space-x-4">
+                                    {visibleProducts < totalProducts && (
+                                        <Fade direction="up" duration={800} triggerOnce>
+                                            <button
+                                                onClick={handleLoadMore}
+                                                className="text-primary hover:bg-primary hover:text-white px-3 py-2 border border-primary rounded transition ease-in-out duration-300">
+                                                Browse More
+                                            </button>
+                                        </Fade>
+                                    )}
 
-                    {visibleProducts > 16 && (
-                        <Fade direction="up" duration={800} triggerOnce>
-                            <button
-                                onClick={handleShowLess}
-                                className="text-white bg-primary hover:bg-red-600 px-3 py-2 border border-primary rounded transition ease-in-out duration-300">
-                                Show Less
-                            </button>
-                        </Fade>
-                    )}
-                </div>
+                                    {visibleProducts > 16 && (
+                                        <Fade direction="up" duration={800} triggerOnce>
+                                            <button
+                                                onClick={handleShowLess}
+                                                className="text-white bg-primary hover:bg-red-600 px-3 py-2 border border-primary rounded transition ease-in-out duration-300">
+                                                Show Less
+                                            </button>
+                                        </Fade>
+                                    )}
+                                </div>
+                            </div>
+                        )
+                    )
+                }
             </div>
 
             {/* Filter Modal */}

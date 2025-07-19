@@ -39,9 +39,9 @@ const AppNavbar = () => {
         label: category.categoryName,
     }));
 
-    const handleCategoryChange = (selectedOption) => {
+    const handleCategoryChange = async (selectedOption) => {
         if (selectedOption) {
-            const selectedCategoryId = selectedOption.value; // Get the _id from the selected option
+            const selectedCategoryId = await selectedOption.value; // Get the _id from the selected option
             navigate(`/by-category/${selectedCategoryId}`); // Dynamic route with _id
         }
     };
